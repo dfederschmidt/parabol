@@ -1,0 +1,32 @@
+<md-dialog aria-label="Edit Script"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Edit Script</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px;max-height:810px; min-width: 400px">
+      <div class="md-dialog-content">
+        <md-input-container>
+        <label>Script Name</label>
+        <input type="text" placeholder="" ng-model="scriptName"></input>
+      </md-input-container>
+      <md-input-container>
+        <label>Script Content</label>
+        <textarea type="text" ng-model="scriptCode" columns="1" md-maxlength="10000"></textarea>
+      </md-input-container>
+
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions>
+      <span flex></span>
+      <md-button ng-click="save(scriptName,scriptCode)">
+       Save
+      </md-button>
+      <md-button ng-click="save(scriptName,scriptCode)" style="margin-right:20px;">
+        Dismiss
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

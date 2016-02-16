@@ -1,0 +1,21 @@
+<md-card>
+  <md-toolbar class="md-accent">
+    <h2 class="md-toolbar-tools">
+      <span flex> Create new Script</span>
+    </h2>
+  </md-toolbar>
+  <md-card-content>
+    <md-input-container>
+    <label>Script Name</label>
+    <input type="text" placeholder="" ng-model="scriptName"></input>
+  </md-input-container>
+  <md-input-container>
+    <label>Script Content</label>
+    <textarea type="text" ng-model="scriptCode" columns="1" md-maxlength="10000"></textarea>
+  </md-input-container>
+
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button ng-click="saveScript(scriptName, scriptCode)" class="md-raised md-primary"> Save</md-button>
+  </md-card-actions>
+</md-card>

@@ -1,0 +1,67 @@
+<md-content class="md-padding">
+  <md-card>
+
+    <md-toolbar class="md-accent">
+      <h2 class="md-toolbar-tools">
+        <span flex> Open Socket Connections</span>
+      </h2>
+    </md-toolbar>
+    <md-card-content>
+
+      <md-data-table-container>
+        <table md-data-table md-row-select="selectedSockets">
+          <thead>
+            <tr>
+              <th name="ClientID" unit="String"></th>
+              <th name="Host" unit="String"></th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr md-auto-select ng-repeat="client in clients">
+              <td>{{client.clientID}}</td>
+              <td><a target="_blank" ng-href="{{client.host.url}}">{{client.host.url}}</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </md-data-table-container>
+
+    </md-card-content>
+  </md-card>
+
+  <md-card>
+    <md-toolbar class="md-accent">
+      <h2 class="md-toolbar-tools">
+        <span flex> Execute Script</span>
+      </h2>
+    </md-toolbar>
+    <md-card-content>
+      <md-data-table-container>
+        <table md-data-table md-row-select="selectedScripts">
+          <thead>
+            <tr>
+              <th name="ID" unit="String"></th>
+              <th name="Name" unit="String"></th>
+              <th name="View / Edit"></th>
+              <th name="Delete"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="script in scripts">
+              <td>{{script._id}}</td>
+              <td >{{script.name}}</td>
+              <td><md-button ng-click="editScript(script);" class="md-raised">
+                 Edit</md-button></td>
+              <td><md-button ng-click="deleteScript(script._id);" class="md-raised md-warn">
+                 Delete</md-button></td>
+            </tr>
+          </tbody>
+        </table>
+      </md-data-table-container>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button ng-click="runScript();" class="md-raised md-primary">
+         Execute</md-button>
+    </md-card-actions>
+  </md-card>
+</md-content>
